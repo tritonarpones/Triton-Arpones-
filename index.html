@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TRITÓN ARPONES | Calidad y precisión</title>
+
+<style>
+
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0,180,220,.25), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(0,100,180,.25), transparent 35%),
+        linear-gradient(135deg, #020b12, #003047 50%, #00131f);
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   EFECTO DE AGUA
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0,200,255,.12),
+            transparent 45%
+        );
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+header {
+    text-align: center;
+    padding: 35px 20px 25px;
+
+    background: rgba(0,0,0,.55);
+
+    border-bottom:
+        1px solid rgba(0,200,255,.25);
+
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        3px solid rgba(255,255,255,.8);
+
+    box-shadow:
+        0 0 35px rgba(0,190,255,.45);
+
+    margin-bottom: 15px;
+}
+
+header h1 {
+    font-size: 42px;
+    letter-spacing: 6px;
+}
+
+header p {
+    margin-top: 10px;
+
+    color: #8eeaff;
+
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   MENÚ
+========================= */
+
+nav {
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    padding: 14px;
+
+    background: rgba(0,10,18,.88);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom:
+        1px solid rgba(0,200,255,.18);
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.07);
+
+    transition: .3s;
+}
+
+nav a:hover {
+    background: #00a8d6;
+
+    box-shadow:
+        0 0 20px rgba(0,190,255,.35);
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.hero {
+    min-height: 570px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:
+        linear-gradient(
+            rgba(0,10,18,.58),
+            rgba(0,25,40,.85)
+        ),
+        url("arpon-40.jpg.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 850px;
+
+    padding: 45px 30px;
+
+    background:
+        rgba(0,0,0,.55);
+
+    border-radius: 25px;
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.6);
+}
+
+.hero h2 {
+    font-size: 50px;
+
+    margin-bottom: 20px;
+
+    letter-spacing: 3px;
+}
+
+.hero h2 span {
+    color: #39d9ff;
+}
+
+.hero p {
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.8;
+
+    color: #d5f7ff;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.botones {
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.boton {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 35px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #008eb8,
+            #00c8f0
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0,180,230,.25);
+
+    transition: .3s;
+}
+
+.boton:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(0,200,255,.4);
+}
+
+.boton-whatsapp {
+    background: #18c86a;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.seccion {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 80px 20px;
+}
+
+.titulo {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.titulo h2 {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+.titulo p {
+    color: #9bdbea;
+}
+
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.productos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 30px;
+}
+
+.producto {
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.08),
+            rgba(0,0,0,.45)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.13);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.45);
+
+    transition: .35s;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+
+    border-color:
+        rgba(0,200,255,.45);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.65);
+}
+
+.producto-imagen {
+    height: 330px;
+
+    background: #02090e;
+
+    overflow: hidden;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+}
+
+.producto:hover .producto-imagen img {
+    transform: scale(1.04);
+}
+
+.producto-info {
+    padding: 25px;
+}
+
+.producto-info h3 {
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+.producto-info p {
+    color: #c7eaf2;
+
+    line-height: 1.6;
+}
+
+.etiqueta {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    background: rgba(0,180,230,.15);
+
+    color: #59ddff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   GALERÍA
+========================= */
+
+.galeria {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 20px;
+}
+
+.foto {
+    height: 270px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #02090e;
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.45);
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+
+    cursor: pointer;
+}
+
+.foto:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   MARCACIÓN
+========================= */
+
+.marcacion {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 40px;
+
+    align-items: center;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(0,0,0,.4);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+}
+
+.marcacion-texto h2 {
+    font-size: 36px;
+
+    margin-bottom: 15px;
+}
+
+.marcacion-texto p {
+    color: #c7eaf2;
+
+    line-height: 1.8;
+}
+
+.marcacion img {
+    width: 100%;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.6);
+}
+
+
+/* =========================
+   CARACTERÍSTICAS
+========================= */
+
+.caracteristicas {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px,1fr));
+
+    gap: 20px;
+}
+
+.caracteristica {
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+}
+
+.icono {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.caracteristica h3 {
+    margin-bottom: 8px;
+}
+
+.caracteristica p {
+    color: #a8d9e4;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto {
+    text-align: center;
+
+    padding: 90px 20px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.65),
+            rgba(0,20,30,.8)
+        );
+}
+
+.contacto h2 {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.contacto p {
+    color: #b9e6ef;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   PIE DE PÁGINA
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 30px 20px;
+
+    background: #010608;
+
+    color: #78939b;
+
+    font-size: 14px;
+}
+
+footer strong {
+    color: white;
+}
+
+
+/* =========================
+   RESPONSIVE CELULAR
+========================= */
+
+@media(max-width:700px) {
+
+    header h1 {
+        font-size: 28px;
+
+        letter-spacing: 3px;
+    }
+
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .marcacion {
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+    }
+
+    .seccion {
+        padding: 60px 15px;
+    }
+
+    .producto-imagen {
+        height: 280px;
+    }
+
+    nav a {
+        font-size: 13px;
+
+        padding: 8px 13px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     ENCABEZADO
+========================= -->
+
+<header>
+
+    <img
+        src="logo(1).jpg"
+        class="logo"
+        alt="Logo Tritón Arpones"
+    >
+
+    <h1>TRITÓN ARPONES</h1>
+
+    <p>
+        PRECISIÓN · RESISTENCIA · CALIDAD
+    </p>
+
+</header>
+
+
+<!-- =========================
+     MENÚ
+========================= -->
+
+<nav>
+
+    <a href="#inicio">Inicio</a>
+
+    <a href="#productos">Arpones</a>
+
+    <a href="#galeria">Galería</a>
+
+    <a href="#marcacion">Marcación</a>
+
+    <a href="#contacto">Contacto</a>
+
+</nav>
+
+
+<!-- =========================
+     PORTADA
+========================= -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <h2>
+            Bienvenido a
+            <span>Tritón</span>
+        </h2>
+
+        <p>
+            Arpones diseñados para quienes buscan
+            calidad, resistencia y precisión.
+            Conoce nuestra línea Tritón y encuentra
+            el equipo ideal para tus aventuras.
+        </p>
+
+
+        <div class="botones">
+
+            <a
+                href="#productos"
+                class="boton"
+            >
+                🔱 Ver arpones
+            </a>
+
+            <a
+                href="#contacto"
+                class="boton boton-whatsapp"
+            >
+                💬 Contactarnos
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CARACTERÍSTICAS
+========================= -->
+
+<section class="seccion">
+
+    <div class="titulo">
+
+        <h2>¿Por qué Tritón?</h2>
+
+        <p>
+            Diseñados pensando en rendimiento y confiabilidad.
+        </p>
+
+    </div>
+
+
+    <div class="caracteristicas">
+
+
+        <div class="caracteristica">
+
+            <div class="icono">🛡️</div>
+
+            <h3>Alta resistencia</h3>
+
+            <p>
+                Materiales seleccionados
+                para ofrecer durabilidad.
+            </p>
+
+        </div>
+
+
+        <div class="caracteristica">
+
+            <div class="icono">🎯</div>
+
+            <h3>Precisión</h3>
+
+            <p>
+                Diseño pensado para
+                facilitar un manejo preciso.
+            </p>
+
+        </div>
+
+
+        <div class="caracteristica">
+
+            <div class="icono">🌊</div>
+
+            <h3>Pesca submarina</h3>
+
+            <p>
+                Una opción práctica para
+                tus actividades bajo el agua.
+            </p>
+
+        </div>
+
+
+        <div class="caracteristica">
+
+            <div class="icono">🔱</div>
+
+            <h3>Diseño Tritón</h3>
+
+            <p>
+                Identidad propia y
+                acabados distintivos.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PRODUCTOS
+========================= -->
+
+<section
+    class="seccion"
+    id="productos"
+>
+
+    <div class="titulo">
+
+        <h2>🔱 Nuestros Arpones</h2>
+
+        <p>
+            Conoce nuestros modelos disponibles.
+        </p>
+
+    </div>
+
+
+    <div class="productos">
+
+
+        <!-- TRITÓN 40 -->
+
+        <div class="producto">
+
+            <div class="producto-imagen">
+
+                <img
+                    src="arpon-40.jpg.png"
+                    alt="Arpón Tritón 40 cm"
+                >
+
+            </div>
+
+
+            <div class="producto-info">
+
+                <h3>Tritón 40 cm</h3>
+
+                <p>
+                    Modelo compacto, práctico y
+                    diseñado para ofrecer facilidad
+                    de manejo y precisión.
+                </p>
+
+                <span class="etiqueta">
+                    40 CM
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TRITÓN 50 -->
+
+        <div class="producto">
+
+            <div class="producto-imagen">
+
+                <img
+                    src="arpon-50.jpg.jpeg"
+                    alt="Arpón Tritón 50 cm"
+                >
+
+            </div>
+
+
+            <div class="producto-info">
+
+                <h3>Tritón 50 cm</h3>
+
+                <p>
+                    Un modelo de mayor longitud,
+                    pensado para quienes buscan
+                    mayor alcance.
+                </p>
+
+                <span class="etiqueta">
+                    50 CM
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     GALERÍA
+========================= -->
+
+<section
+    class="seccion"
+    id="galeria"
+>
+
+    <div class="titulo">
+
+        <h2>📸 Galería</h2>
+
+        <p>
+            Conoce nuestros productos y procesos.
+        </p>
+
+    </div>
+
+
+    <div class="galeria">
+
+
+        <div class="foto">
+
+            <img
+                src="arpon-40.jpg.png"
+                alt="Tritón 40 cm"
+            >
+
+        </div>
+
+
+        <div class="foto">
+
+            <img
+                src="arpon-50.jpg.jpeg"
+                alt="Tritón 50 cm"
+            >
+
+        </div>
+
+
+        <div class="foto">
+
+            <img
+                src="marcacionlaser.png"
+                alt="Marcación láser Tritón"
+            >
+
+        </div>
+
+
+        <div class="foto">
+
+            <img
+                src="logo(1).jpg"
+                alt="Logo Tritón"
+            >
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MARCACIÓN LÁSER
+========================= -->
+
+<section
+    class="seccion"
+    id="marcacion"
+>
+
+    <div class="marcacion">
+
+
+        <div class="marcacion-texto">
+
+            <h2>
+                ✨ Marcación Láser
+            </h2>
+
+            <p>
+                Dale una identidad única a tu equipo
+                con nuestra marcación láser.
+            </p>
+
+            <br>
+
+            <p>
+                Un acabado limpio y profesional
+                para personalizar tus productos Tritón.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <img
+                src="marcacionlaser.png"
+                alt="Marcación láser"
+            >
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section
+    class="contacto"
+    id="contacto"
+>
+
+    <h2>
+        ¿Quieres un Tritón?
+    </h2>
+
+    <p>
+        Escríbenos para conocer disponibilidad,
+        modelos y precios.
+    </p>
+
+
+    <!-- CAMBIA EL NÚMERO -->
+
+    <a
+        href="https://wa.me/57TU_NUMERO"
+        class="boton boton-whatsapp"
+    >
+        💬 WhatsApp
+    </a>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <strong>TRITÓN ARPONES</strong>
+
+    <br><br>
+
+    Precisión · Resistencia · Calidad
+
+    <br><br>
+
+    © 2026 Tritón Arpones
+
+</footer>
+
+
+</body>
+</html>
